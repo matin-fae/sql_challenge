@@ -8,7 +8,7 @@ CREATE TABLE departments (
 	dept_no VARCHAR NOT NULL,
 	dept_name VARCHAR NOT NULL,
     PRIMARY KEY (dept_no)
-)
+);
 --test
 --SELECT * FROM departments
 
@@ -33,7 +33,7 @@ CREATE TABLE employees (
 	sex CHAR(1) NOT NULL,
 	hire_date DATE NOT NULL,
     PRIMARY KEY (emp_no)
-)
+);
 --test
 --SELECT * FROM employees
 
@@ -46,7 +46,7 @@ CREATE TABLE dept_emp (
 	PRIMARY KEY (emp_no, dept_no),
     FOREIGN KEY (emp_no) REFERENCES employees (emp_no),
     FOREIGN KEY (dept_no) REFERENCES departments (dept_no)
-)
+);
 --test
 --SELECT * FROM dept_emp
 
@@ -59,7 +59,7 @@ CREATE TABLE dept_manager(
     FOREIGN KEY (dept_no) REFERENCES departments (dept_no),
     FOREIGN KEY (emp_no) REFERENCES employees (emp_no),
 	PRIMARY kEY (dept_no, emp_no)
-)
+);
 --test
 --SELECT * FROM dept_manager
 
@@ -71,6 +71,6 @@ CREATE TABLE salaries (
 	salary INT NOT NULL,
     PRIMARY KEY (emp_no),
     FOREIGN KEY (emp_no) REFERENCES employees (emp_no)
-)
+);
 --test
 --SELECT * FROM salaries

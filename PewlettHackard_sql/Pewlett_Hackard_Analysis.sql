@@ -5,7 +5,7 @@ CREATE VIEW q1 AS(
 	FROM salaries s
 		INNER JOIN employees e
 			ON (e.emp_no = s.emp_no)
-)
+);
 --test
 --SELECT * FROM q1
 
@@ -15,7 +15,7 @@ CREATE VIEW q2 AS(
 	FROM employees
 		WHERE
 			EXTRACT(YEAR FROM hire_date) = 1986
-)
+);
 --test
 --SELECT * FROM q2
 
@@ -27,7 +27,7 @@ CREATE VIEW q3 AS
 		INNER JOIN departments d
 			ON 	(dm.dept_no = d.dept_no)
 		INNER JOIN employees e
-			ON (dm.emp_no = e.emp_no)
+			ON (dm.emp_no = e.emp_no);
 --test
 --SELECT * FROM q3
 
@@ -39,7 +39,7 @@ CREATE VIEW q4 AS
 		INNER JOIN employees e
 			ON (de.emp_no = e.emp_no)
 		INNER JOIN departments d
-			ON (de.dept_no = d.dept_no)
+			ON (de.dept_no = d.dept_no);
 --test
 --SELECT * FROM q4
 
@@ -48,7 +48,7 @@ CREATE VIEW q5 AS
 	SELECT first_name, last_name, sex
 	FROM employees
 		WHERE first_name = 'Hercules'
-		AND last_name LIKE 'B%'
+		AND last_name LIKE 'B%';
 --test
 --SELECT * FROM q5
 
@@ -60,7 +60,7 @@ CREATE VIEW q6 AS
 			ON (e.emp_no = de.emp_no)
 		INNER JOIN departments d
 			ON (de.dept_no = d.dept_no)
-		WHERE d.dept_name = 'Sales'
+		WHERE d.dept_name = 'Sales';
 --test
 --SELECT * FROM q6
 
@@ -74,7 +74,7 @@ CREATE VIEW q7 AS
 		INNER JOIN departments d
 			ON (de.dept_no = d.dept_no)
 		WHERE d.dept_name = 'Sales'
-		OR d.dept_name = 'Development'
+		OR d.dept_name = 'Development';
 --test
 --SELECT * FROM q7
 
@@ -84,6 +84,6 @@ CREATE VIEW q8 AS
 	FROM employees
 		GROUP BY last_name
 		ORDER BY COUNT(last_name)
-			DESC
+			DESC;
 --test
 --SELECT * FROM q8
